@@ -1,0 +1,3 @@
+- Sources Drivers updated from ColorOS 16.0.10.500
+- Security patch 2026-08-01
+- Build PKG110_11.F.56_2560_202608111940, 59 files
