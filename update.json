@@ -2,9 +2,15 @@
   "version": "v2.6.2",
   "versionCode": 20602,
   "zipUrl": "https://github.com/UIRAN23/Ace5-Drivers/releases/download/500_16.1/Ace5DV2_6_2.zip",
-  "changelog": "https://raw.githubusercontent.com/UIRAN23/Ace5-Drivers/main/changelog.md",
+  "changelog": "https://raw.githubusercontent.com/UIRAN23/Ace5-Drivers/main/changelogs/v2.6.2.md",
   "buildId": "d022d877a1bb",
   "firmware": "PKG110_11.F.56_2560_202608111940",
   "coloros": "16.0.10.500",
-  "size": 10684091
+  "size": 10684091,
+  "sha256": "067b0d224648fc0bbd9c65a5633b882025761a06a222a47d9cf3eaeef70efafc",
+  "componentHashes": {
+    "webui": "ce062e6b758e52e06ad4e5cb029ef064008015de3ec4b70cd21593a28ee30062",
+    "scripts": "13ac63410bde664a0c18498d38db4e9b9a4cda91a4a91e36fe19fb6f1a0bd624"
+  },
+  "updateType": "module"
 }

@@ -1,0 +1,34 @@
+name: "Изменить ченджлог текущей версии"
+on:
+  workflow_dispatch:
+    inputs:
+      changelog:
+        description: 'Markdown: ## Заголовок\n- Изменение. Только для уже опубликованной версии'
+        type: string
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: ace5-channel-notes
+  cancel-in-progress: false
+jobs:
+  notes:
+    if: github.actor == 'UIRAN23' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Обновить только текст
+        env:
+          CHANGELOG: ${{ inputs.changelog }}
+        run: python .github/scripts/update_notes.py
+      - name: Сохранить ченджлог
+        run: |
+          git config user.name Vladimir
+          git config user.email nemsasa29@gmail.com
+          git add changelog.md changelogs/
+          git diff --cached --quiet && exit 0
+          git commit -m "Update published changelog"
+          git push origin HEAD:main
